@@ -45,7 +45,7 @@ export const Home = () => {
             </div>
           : <div className="movies-container">
             {movies.map((movie: Movie) => (
-              <Link to='/' className='movie-item'><img src={movie.Poster} alt={movie.Title} /></Link>
+              <Link to={`/movie/${movie.imdbID}`} className='movie-item'><img src={movie.Poster} alt={movie.Title} /></Link>
             ))}
           </div>
         }

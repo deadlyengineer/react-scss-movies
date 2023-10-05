@@ -102,3 +102,252 @@ body {
     }
   }
 }
+
+.movie-page {
+
+  .back-btn {
+    margin: 8px 0;
+    
+    a {
+      img {
+        width: 24px;
+        height: 24px;
+      } 
+    }
+  }
+
+  .loading-container {
+    height: calc(100vh - 112px);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: left;
+    line-height: 21px;
+    width: fit-content;
+    color: #7A8C99;
+  }
+
+  .movie-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 135px;
+
+    .movie-info {
+      width: 49.1%;
+
+      .movie-short-info {
+        margin: 32px 0 23px;
+        display: flex;
+        font-family: Roboto;
+        font-size: 20px;
+        text-align: left;
+        line-height: 29px;
+        height: 29px;
+        color: #7A8C99;
+
+        .runtime {
+          margin-right: 10px;
+        }
+
+        .year {
+          margin-right: 10px;
+        }
+
+        .r-container {
+          width: 23px;
+          background-color: #7A8C99;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: Roboto;
+          font-size: 16px;
+          line-height: 16px;
+          color: #0A1014;
+          border-radius: 4px;
+        }
+      }
+
+      .title {
+        font-family: Roboto;
+        font-weight: bold;
+        font-size: 80px;
+        text-align: left;
+        line-height: 87px;
+        color: #FFFFFF;
+      }
+
+      .rating-info {
+        margin-top: 14px;
+        height: 40px;
+        display: flex;
+
+        .imdb-rating {
+          border: 1px solid #353F4C;
+          border-radius: 4px;
+          margin-right: 16px;
+          display: flex;
+          overflow: hidden;
+
+          .image-container {
+            background-color: #FF9F1C;
+            width: 53px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .image-container img {
+              width: 37px;
+              height: 15px;
+            }
+
+          }
+
+          p {
+            width: 65px;
+            font-family: Roboto;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            margin: 0;
+          }
+        }
+
+        .tomato-rating {
+          border: 1px solid #353F4C;
+          border-radius: 4px;
+          margin-right: 16px;
+          display: flex;
+          overflow: hidden;
+
+          .image-container {
+            background-color: #FF4040;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .image-container img {
+              width: 17px;
+              height: 16px;
+            }
+
+          }
+
+          p {
+            width: 47px;
+            font-family: Roboto;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            margin: 0;
+          }
+        }
+
+        .favourite {
+          border: 1px solid #353F4C;
+          border-radius: 4px;
+          padding: 10px 17px 9px 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          cursor: pointer;
+
+          img {
+            width: 16px;
+            height: 16px;
+            margin-right: 12px;
+          }
+
+          p {
+            margin: 0;
+            font-family: Roboto;
+            font-size: 16px;
+            text-align: left;
+            line-height: 21px;
+            color: #7A8C99;
+          }
+        }
+
+        .favourite.active {
+          background-color: #FF4040;
+          border: 1px solid #FF4040;
+
+          img {
+            filter: brightness(100)
+          }
+
+          p {
+            color: #fff;
+          }
+        }
+      }
+
+      .plot {
+        margin: 48px 0 43px;
+
+        h5 {
+          margin: 0;
+          padding: 0;
+          font-family: Roboto;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: left;
+          line-height: 21px;
+          color: #7A8C99;
+        }
+
+        p {
+          margin: 11px 0 0;
+          padding: 0;
+          font-family: Roboto;
+          font-size: 16px;
+          text-align: left;
+          line-height: 23px;
+          color: #fff;
+        }
+      }
+
+      .movie-detail {
+        display: flex;
+        justify-content: space-between;
+
+        .cast, .genre, .director {
+          h5 {
+            margin: 0 0 11px;
+            padding: 0;
+            font-family: Roboto;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: left;
+            line-height: 21px;
+            color: #7A8C99;
+          }
+
+          p {
+            margin: 11px 0 0;
+            padding: 0;
+            font-family: Roboto;
+            font-size: 16px;
+            text-align: left;
+            line-height: 23px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    
+    .movie-media {
+      width: 40.7%;
+      
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
