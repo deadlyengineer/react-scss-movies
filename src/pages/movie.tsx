@@ -18,7 +18,11 @@ export const MoviePage = () => {
     if (isLoading) {
       getMovie(params.id || '').then((result) => {
         setIsLoading(false);
-        setMovie(result);
+        if (!result.Response) {
+          setMovie(null);
+        } else {
+          setMovie(result);
+        }
         console.log(result)
       }) 
     }
@@ -34,6 +38,8 @@ export const MoviePage = () => {
       {
         isLoading
         ? <div className="loading-container">Loading...</div>
+        : movie === null
+        ? <div className="loading-container">Movie not found</div>
         : <div className="movie-container">
           <div className="movie-info">
             <div className="movie-short-info">
