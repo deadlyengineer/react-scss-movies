@@ -6,6 +6,7 @@ import ImdbIcon from "../assets/logo-imdb.svg";
 import TomatoIcon from "../assets/logo-rotten-tomatoes.svg";
 import HeartIcon from "../assets/icon-heart-grey.svg";
 import { getMovie } from "../services/api.service";
+import EmptyImage from '../assets/illustration-empty-state.png';
 
 export const MoviePage = () => {
   const params = useParams();
@@ -18,12 +19,16 @@ export const MoviePage = () => {
     if (isLoading) {
       getMovie(params.id || '').then((result) => {
         setIsLoading(false);
-        if (!result.Response) {
+        
+        if (typeof result === 'string') {
           setMovie(null);
         } else {
-          setMovie(result);
+          if (result.Response === 'False') {
+            setMovie(null);
+          } else {
+            setMovie(result);
+          }
         }
-        console.log(result)
       }) 
     }
   }, []);
@@ -39,7 +44,10 @@ export const MoviePage = () => {
         isLoading
         ? <div className="loading-container">Loading...</div>
         : movie === null
-        ? <div className="loading-container">Movie not found</div>
+        ? <div className="loading-container">
+            <img src={EmptyImage} alt='empty'/>
+            Movie not found
+          </div>
         : <div className="movie-container">
           <div className="movie-info">
             <div className="movie-short-info">
@@ -91,8 +99,12 @@ export const MoviePage = () => {
               </div>
             </div>
           </div>
-          <div className="movie-media">
-            <img src={movie?.Poster} alt={movie?.Title} />
+          <div className={`movie-media ${movie?.Poster === 'N/A' ? 'unavailable' : ''}`}>
+            {
+              movie?.Poster === 'N/A'
+              ? <p>Image Unavailable</p>
+              : <img src={movie?.Poster} alt={movie?.Title} />
+            }
           </div>
         </div>
       }

@@ -86,11 +86,25 @@ body {
         width: calc((100% - 100px) / 6);
         margin-right: 20px;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
         
         img {
           height: 100%;
           width: 100%;
           border-radius: 3px;
+        }
+
+        p {
+          height: fit-content;
+          width: 100%;
+          font-family: Roboto;
+          font-size: 16px;
+          text-align: center;
+          line-height: 21px;
+          color: #7A8C99;
         }
   
       }
@@ -120,6 +134,7 @@ body {
     height: calc(100vh - 112px);
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Roboto;
@@ -128,6 +143,11 @@ body {
     line-height: 21px;
     width: fit-content;
     color: #7A8C99;
+
+    img {
+      width: 396px;
+      height: 193px;
+    }
   }
 
   .movie-container {
@@ -272,20 +292,21 @@ body {
             line-height: 21px;
             color: #7A8C99;
           }
+          
+          &.active {
+            background-color: #FF4040;
+            border: 1px solid #FF4040;
+  
+            img {
+              filter: brightness(100)
+            }
+  
+            p {
+              color: #fff;
+            }
+          }
         }
 
-        .favourite.active {
-          background-color: #FF4040;
-          border: 1px solid #FF4040;
-
-          img {
-            filter: brightness(100)
-          }
-
-          p {
-            color: #fff;
-          }
-        }
       }
 
       .plot {
@@ -344,10 +365,28 @@ body {
     
     .movie-media {
       width: 40.7%;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      border-radius: 8px;
+      overflow: hidden;
       
       img {
         width: 100%;
       }
+
+      p {
+        font-family: Roboto;
+        font-size: 24px;
+        text-align: center;
+        color: #fff;
+      }
+
+      &.unavailable {
+        background-color: grey;
+        align-items: center;
+      }
     }
+    
   }
 }

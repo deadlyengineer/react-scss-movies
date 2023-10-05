@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import SearchIcon from '../assets/icon-magnifier-grey.svg'
-import EmptyImage from '../assets/illustration-empty-state.png'
-import { Movie, SearchApiResonponse } from '../types/movie.type'
-import { searchMovies } from '../services/api.service'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import SearchIcon from '../assets/icon-magnifier-grey.svg';
+import EmptyImage from '../assets/illustration-empty-state.png';
+import { Movie, SearchApiResonponse } from '../types/movie.type';
+import { searchMovies } from '../services/api.service';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
 
@@ -45,7 +45,11 @@ export const Home = () => {
             </div>
           : <div className="movies-container">
             {movies.map((movie: Movie, index) => (
-              <Link to={`/movie/${movie.imdbID}`} className='movie-item' key={index}><img src={movie.Poster} alt={movie.Title} /></Link>
+              <Link to={`/movie/${movie.imdbID}`} className='movie-item' key={index}>
+                {movie.Poster === 'N/A'
+                ? <p>{movie.Title}</p>
+                : <img src={movie.Poster} alt={movie.Title} />}
+              </Link>
             ))}
           </div>
         }
