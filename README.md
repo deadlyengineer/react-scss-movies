@@ -40,3 +40,17 @@ Builds the app for production to the `build` folder.\
 
 The project follows Layered Architecture, which separates service and implementation layer.\
 It is widely used to separate concerns, increase modifiability and code reusability.
+
+## Pitfalls
+
+The OMDb endpoint response is not consistent, sometimes returning string data instead of object.\
+Thus, some sanitization methods used for some cases.
+
+## Further implementation
+
+There are some ToDos here:
+
+- Test should be added
+- Mobile version UI design should be provided for better view!
+- Css methodology not used, it would be beneficial for future development
+- Regarding SEO and OG compatability, we can easily convert this into NextJS
