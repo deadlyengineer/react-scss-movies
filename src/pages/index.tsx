@@ -44,8 +44,8 @@ export const Home = () => {
               <p>Here's an offer you can't refuse</p>
             </div>
           : <div className="movies-container">
-            {movies.map((movie: Movie) => (
-              <Link to={`/movie/${movie.imdbID}`} className='movie-item'><img src={movie.Poster} alt={movie.Title} /></Link>
+            {movies.map((movie: Movie, index) => (
+              <Link to={`/movie/${movie.imdbID}`} className='movie-item' key={index}><img src={movie.Poster} alt={movie.Title} /></Link>
             ))}
           </div>
         }

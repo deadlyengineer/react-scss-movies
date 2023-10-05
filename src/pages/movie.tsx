@@ -73,20 +73,20 @@ export const MoviePage = () => {
             <div className="movie-detail">
               <div className="cast">
                 <h5>Cast</h5>
-                {movie?.Actors.split(',').map((item) => (
-                  <p>{item}</p>
+                {movie?.Actors.split(',').map((item, index) => (
+                  <p key={index}>{item}</p>
                 ))}
               </div>
               <div className="genre">
                 <h5>Genre</h5>
-                {movie?.Genre.split(',').map((item) => (
-                  <p>{item}</p>
+                {movie?.Genre.split(',').map((item, index) => (
+                  <p key={index}>{item}</p>
                 ))}
               </div>
               <div className="director">
                 <h5>Director</h5>
-                {movie?.Director.split(',').map((item) => (
-                  <p>{item}</p>
+                {movie?.Director.split(',').map((item, index) => (
+                  <p key={index}>{item}</p>
                 ))}
               </div>
             </div>
