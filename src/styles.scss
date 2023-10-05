@@ -39,6 +39,8 @@ body {
   }
 
   .main-container {
+    margin-right: -20px;
+
     .empty-container {
       height: calc(100vh - 124px);
       display: flex;
@@ -80,10 +82,11 @@ body {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       
       .movie-item {
         height: 240px;
-        width: calc((100% - 100px) / 6);
+        width: 180px;
         margin-right: 20px;
         margin-bottom: 20px;
         display: flex;
@@ -108,11 +111,6 @@ body {
         }
   
       }
-      
-      .movie-item:nth-child(6n) {
-        margin-right: 0;
-      }
-
     }
   }
 }
@@ -201,13 +199,14 @@ body {
 
       .rating-info {
         margin-top: 14px;
-        height: 40px;
         display: flex;
+        flex-wrap: wrap;
 
         .imdb-rating {
           border: 1px solid #353F4C;
           border-radius: 4px;
           margin-right: 16px;
+          margin-bottom: 10px;
           display: flex;
           overflow: hidden;
 
@@ -240,6 +239,7 @@ body {
           border: 1px solid #353F4C;
           border-radius: 4px;
           margin-right: 16px;
+          margin-bottom: 10px;
           display: flex;
           overflow: hidden;
 
@@ -271,6 +271,7 @@ body {
         .favourite {
           border: 1px solid #353F4C;
           border-radius: 4px;
+          margin-bottom: 10px;
           padding: 10px 17px 9px 12px;
           display: flex;
           justify-content: center;
@@ -336,9 +337,11 @@ body {
 
       .movie-detail {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
 
         .cast, .genre, .director {
+          margin-bottom: 25px;
           h5 {
             margin: 0 0 11px;
             padding: 0;
@@ -388,5 +391,42 @@ body {
       }
     }
     
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  body {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .movie-page {
+    .movie-container {
+      flex-direction: column;
+
+      .movie-info {
+        width: 100%;
+        order: 2;
+      }
+
+      .movie-media {
+        width: 100%;
+        order: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 684px) {
+  .movie-page {
+    .movie-container {
+      .movie-info {
+        .title {
+          font-size: 10vw;
+          line-height: 65px;
+        }
+      }
+    }
   }
 }
